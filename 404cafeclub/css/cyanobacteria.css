@@ -311,23 +311,22 @@ a:visited {
 	text-align: center;
 }
 
-.scrollContainer {
-	display: flex;
-	align-items: stretch;
-	flex-direction: column;
-}
-
 .scroll {
+        display: flex;
+        flex-direction: column;
 	flex-grow: 1;
-	position: relative;
 	overflow-y: scroll;
+        max-height: 950px; /* this is hardcoded to make it match the length of the content to its left */
 	scrollbar-color: #919ed7 #e5e8f5;
+        border-style: none;
 }
 
-.scroll>div {
-	position: absolute;
-	width: 100%;
-	padding-right: 10px;
+.scroll article {
+        margin-bottom: 25px;
+}
+
+.scroll p {
+        line-height: .75em;
 }
 
 .align {
@@ -362,4 +361,14 @@ hr {
 	border: 1px solid;
 	color: var(--accent);
 	width: 400px;
+}
+
+.analysis-heading {
+        font-weight: bold;
+        text-align: center;
+        text-wrap: nowrap; /* if the heading is really long this will look weird, so you might want to change it */
+}
+
+@media only screen and (max-width: 773px) {
+        .scroll{ max-height: 500px;}
 }
