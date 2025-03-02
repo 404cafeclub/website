@@ -440,6 +440,10 @@ dd::before {
 	margin-left: 1rem;
 }
 
+.angelnumber {
+	width: 17%;
+}
+
 @media only screen and (max-width: 773px) {
 	.scroll {
 		max-height: 500px;
