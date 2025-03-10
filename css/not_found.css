@@ -9,13 +9,18 @@ p {
 	line-height: 1.2;
 }
 
+header {
+    background: none;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
 h1 {
-	font-size: 2rem;
+	font-size: 3.5rem;
 	font-family: "NocturnalSubway";
 	font-weight: normal;
 	text-align: center;
-	border-bottom: 2px ridge var(--border);
-	padding-bottom: 5px;
 }
 
 h2 {
@@ -24,7 +29,6 @@ h2 {
 	font-weight: normal;
 	text-align: center;
 	border: none;
-	padding-top: 10x;
 }
 
 h3 {
@@ -78,7 +82,7 @@ dd::before {
 
 .squibby {
 	text-align: center;
-	max-width: 400px;
+	max-width: 270px;
 	margin: auto;
 }
 
@@ -86,6 +90,10 @@ dd::before {
 	width: 50px;
 	height: auto;
 	image-rendering: pixelated;
+}
+
+.powerlines {
+	width: 100%;
 }
 
 @media only screen and (max-width: 773px) {

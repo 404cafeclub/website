@@ -44,7 +44,6 @@ header {
 	background: url('../images/dithered/powerlines_dithered.jpg');
 	background-position: top -125px left 0px;
 }
-
 /* end light mode styling */
 
 
@@ -83,9 +82,7 @@ header {
 
 	}
 }
-
 /* end dark mode styling */
-
 
 * {
 	box-sizing: border-box;
@@ -148,7 +145,6 @@ a[href]:active {
 	flex-wrap: wrap;
 	padding: 5px;
 	gap: 5px;
-
 	/* container background pattern */
 	background-color: var(--bg);
 }
@@ -175,7 +171,6 @@ background-color: var(--gradientBottom);
 .half {
 	flex: 1 1 49%;
 }
-
 
 header {
 	background-size: cover;
@@ -252,14 +247,12 @@ div.small>img {
 	border-radius: 5px;
 }
 
-
 section {
 	border: 2px ridge var(--border);
 	border-radius: 5px;
 	background: linear-gradient(var(--gradientTop), var(--gradientBottom));
 	padding: 5px;
 }
-
 
 footer {
 	text-align: center;
@@ -270,7 +263,6 @@ footer {
 footer a {
 	text-decoration: none;
 }
-
 
 h1,
 h2,
@@ -288,7 +280,6 @@ h1 {
 	font-family: "NocturnalSubway";
 	font-weight: normal;
 	text-align: center;
-
 }
 
 /*letter-spacing: 2px;
@@ -331,13 +322,11 @@ h6 {
 /* prevents overflow on smaller screens */
 img {
 	max-width: 100%;
-
 }
 
 pre {
 	overflow-x: auto;
 }
-
 
 a:hover,
 a:focus {
@@ -360,9 +349,25 @@ a:visited {
 	overflow-x: hidden;
 	max-height: 950px;
 	/* this is hardcoded to make it match the length of the content to its left */
-	scrollbar-color: #919ed7 #e5e8f5;
-	scrollbar-width: thin;
 	border-style: none;
+}
+
+/* Styles for Firefox scrollbar */
+@-moz-document url-prefix() {
+	.scroll {
+		scrollbar-color: #919ed7 #e5e8f5;
+		scrollbar-width: thin;
+	}
+}
+
+/* Styles for Chrome scrollbar */
+.scroll::-webkit-scrollbar {
+	width: 8px;
+	background-color: #E5E8F5
+}
+ 
+.scroll::-webkit-scrollbar-thumb {
+  background-color: #919ed7;
 }
 
 /* use this to force a horizontal scroll bar */
@@ -370,7 +375,7 @@ a:visited {
 	overflow-x: scroll;
 }
 
-/* use this to force a verticla scroll bar */
+/* use this to force a vertical scroll bar */
 .scroll-y {
 	overflow-y: scroll;
 }
@@ -400,11 +405,6 @@ a:visited {
 
 #schedule {
 	border-radius: 10px;
-}
-
-iframe {
-	border-radius: 10px;
-	margin-top: 7px;
 }
 
 .pixel img {
@@ -455,6 +455,18 @@ dd::before {
 
 .lumiCursorZoomout:hover {
 	cursor: var(--cursorZoomoutImage), zoom-out;
+}
+
+.calendar {
+    width: 198px;
+	height: 239px; /* height may change depending on month/number of rows */
+	margin-top: 7px;
+	border: 2px ridge var(--border);
+	border-radius: 5px;
+}
+
+html {
+	line-height: 1.2; /* this is a fix for Chrome */
 }
 
 @media only screen and (max-width: 773px) {
