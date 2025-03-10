@@ -446,6 +446,15 @@ dd::before {
 
 .angelnumber {
 	width: 17%;
+        image-rendering: pixelated;
+}
+
+.lumiCursorZoomin:hover {
+	cursor: var(--cursorZoominImage), zoom-in;
+}
+
+.lumiCursorZoomout:hover {
+	cursor: var(--cursorZoomoutImage), zoom-out;
 }
 
 @media only screen and (max-width: 773px) {
@@ -464,12 +473,4 @@ dd::before {
 	h2 {
 		font-size: 1rem;
 	}
-}
-
-.lumiCursorZoomin:hover {
-	cursor: var(--cursorZoominImage), zoom-in;
-}
-
-.lumiCursorZoomout:hover {
-	cursor: var(--cursorZoomoutImage), zoom-out;
 }
