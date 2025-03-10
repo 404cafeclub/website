@@ -442,6 +442,7 @@ dd::before {
 
 .angelnumber {
 	width: 17%;
+        image-rendering: pixelated;
 }
 
 @media only screen and (max-width: 773px) {
