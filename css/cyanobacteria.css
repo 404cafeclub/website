@@ -36,6 +36,8 @@
 	--cursorImage: url('../images/cursors/tenshicursor.png');
 	--cursorPointerImage: url('../images/cursors/tenshicursor_select.png');
 	--cursorTextImage: url('../images/cursors/tenshicursor_text.png');
+	--cursorZoominImage: url('../images/cursors/tenshicursor_zoomin.png');
+	--cursorZoomoutImage: url('../images/cursors/tenshicursor_zoomout.png');
 }
 
 header {
@@ -59,6 +61,8 @@ header {
 		--cursorImage: url('../images/cursors/tenshicursor.png');
 		--cursorPointerImage: url('../images/cursors/tenshicursor_select.png');
 		--cursorTextImage: url('../images/cursors/tenshicursor_text.png');
+		--cursorZoominImage: url('../images/cursors/tenshicursor_zoomin.png');
+		--cursorZoomoutImage: url('../images/cursors/tenshicursor_zoomout.png');
 
 		a {
 			color: #89b2ff;
@@ -443,6 +447,14 @@ dd::before {
 .angelnumber {
 	width: 17%;
         image-rendering: pixelated;
+}
+
+.lumiCursorZoomin:hover {
+	cursor: var(--cursorZoominImage), zoom-in;
+}
+
+.lumiCursorZoomout:hover {
+	cursor: var(--cursorZoomoutImage), zoom-out;
 }
 
 @media only screen and (max-width: 773px) {
