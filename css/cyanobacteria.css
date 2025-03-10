@@ -36,6 +36,8 @@
 	--cursorImage: url('../images/cursors/tenshicursor.png');
 	--cursorPointerImage: url('../images/cursors/tenshicursor_select.png');
 	--cursorTextImage: url('../images/cursors/tenshicursor_text.png');
+	--cursorZoominImage: url('../images/cursors/tenshicursor_zoomin.png');
+	--cursorZoomoutImage: url('../images/cursors/tenshicursor_zoomout.png');
 }
 
 header {
@@ -58,6 +60,8 @@ header {
 		--cursorImage: url('../images/cursors/tenshicursor.png');
 		--cursorPointerImage: url('../images/cursors/tenshicursor_select.png');
 		--cursorTextImage: url('../images/cursors/tenshicursor_text.png');
+		--cursorZoominImage: url('../images/cursors/tenshicursor_zoomin.png');
+		--cursorZoomoutImage: url('../images/cursors/tenshicursor_zoomout.png');
 
 		a {
 			color: #89b2ff;
@@ -472,4 +476,12 @@ html {
 	h2 {
 		font-size: 1rem;
 	}
+}
+
+.lumiCursorZoomin:hover {
+	cursor: var(--cursorZoominImage), zoom-in;
+}
+
+.lumiCursorZoomout:hover {
+	cursor: var(--cursorZoomoutImage), zoom-out;
 }
