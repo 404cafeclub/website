@@ -169,7 +169,7 @@ background-color: var(--gradientBottom);
 }
 
 .half {
-	flex: 1 1 49%;
+	flex: 3 1 49%;
 }
 
 header {
@@ -457,6 +457,16 @@ dd::before {
 	cursor: var(--cursorZoomoutImage), zoom-out;
 }
 
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.gallery img {
+	width: 20%;
+	aspect-ratio: 1/1;
+}
+
 .calendar {
     width: 198px;
 	height: 239px; /* height may change depending on month/number of rows */
@@ -484,5 +494,9 @@ html {
 
 	h2 {
 		font-size: 1rem;
+	}
+
+	.gallery img {
+		width: 33%;
 	}
 }
