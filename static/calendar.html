@@ -21,18 +21,20 @@
 																	----->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
     <style>
         @font-face {
             font-family: ndsbios;
             src: url(../fonts/nds-true-bios.otf);
         }
-
+        
+        /** Unused code **/ /*
         :root {
             --cursorImage: url('../images/cursors/cursor-light.png');
             --cursorPointerImage: url('../images/cursors/hand-light.png');
             --cursorTextImage: url('../images/cursors/text-light.png');
         }
-
         @media (prefers-color-scheme: dark) {
             :root {
                 --cursorImage: url('../images/cursors/cursor-dark.png');
@@ -40,10 +42,30 @@
                 --cursorTextImage: url('../images/cursors/text-dark.png');
             }
         }
-
         body {
 	        cursor: var(--cursorImage), auto;
             background: #fff;
+        }
+        a:link, button {
+            cursor: var(--cursorPointerImage), pointer;
+        }
+        a[href]:active {
+            cursor: var(--cursorPointerImage), -webkit-grabbing;
+            cursor: var(--cursorPointerImage), grabbing;
+        }
+        *:not(:empty):not(img):not(svg):active {
+            cursor: var(--cursorTextImage), text;
+        }
+        */
+
+        :root {
+            --cursorImage: url('../images/cursors/tenshicursor.png');
+            --cursorPointerImage: url('../images/cursors/tenshicursor_select.png');
+            --cursorTextImage: url('../images/cursors/tenshicursor_text.png');
+        }
+
+        body {
+            cursor: var(--cursorImage), auto;
         }
 
         a:link, button {
@@ -51,7 +73,6 @@
         }
 
         a[href]:active {
-            cursor: var(--cursorPointerImage), -webkit-grabbing;
             cursor: var(--cursorPointerImage), grabbing;
         }
 
@@ -64,15 +85,43 @@
             margin: 0;
             padding: 0;
             line-height: 1.2; /* fix for Chrome */
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* IE 10 and IE 11 */
+            user-select: none; /* Standard syntax */
         }
 
         .calendar-container {
             display: flex;
             flex-direction: column;
             background: #fff;
-            width: 210px;
+            /*width: 210px;*/
+            width: 194px;
             font-family: ndsbios;
             font-size: 22px;
+        }
+
+        .calendar-header {
+            text-align: center;
+            max-height: 28px;
+        }
+
+        .calendar-navigation {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            /* height: 30px; */
+        }
+
+        .calendar-current-date {
+            text-align: center;
+            font-weight: 500;
+            font-size: 24px;
+            overflow: hidden; /* Prevent content overflow */
+        }
+
+        .material-symbols-rounded {
+            font-size: 24px; /* Ensure icons have a consistent size */
+            visibility: visible; /* Ensure icons are visible when loaded */
         }
 
         .calendar-body {
@@ -88,32 +137,19 @@
         }
 
         .calendar-body li {
-            width: calc(100% / 8.55);
+            width: calc(100% / 7.62);
             aspect-ratio: 1 / 1;
             font-size: 1.07rem;
             color: #414141;
             margin-bottom: 2px;
             margin-left: 2px;
             border: 1px solid #95aaf0;
-            border-width: 0 1px 1px 0; /* fix for the last row */
-        }
-
-        .calendar-header {
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .calendar-navigation {
-            display: none;
-        }
-
-        .calendar-current-date {
-            font-weight: 500;
-            font-size: 24px;
+            border-width: 0 1px 1px 0; /* Fix for the last row */
+            box-sizing: border-box;
         }
 
         .calendar-weekdays li {
-            cursor: default;
+            /* cursor: default; */
             font-weight: 500;
             font-family: ndsbios;
             font-size: 22px;
@@ -182,12 +218,12 @@
 
 <body>
     <div class="calendar-container">
-        <header class="calendar-header">
-            <p class="calendar-current-date"></p>
+        <header class="calendar-header">            
             <div class="calendar-navigation">
                 <span id="calendar-prev" class="material-symbols-rounded">
                     chevron_left
                 </span>
+                <p class="calendar-current-date"></p>
                 <span id="calendar-next" class="material-symbols-rounded">
                     chevron_right
                 </span>
@@ -287,7 +323,14 @@
             day.innerHTML = lit;
         }
 
+        const sendCalendarHeight = () => {
+            const calendarDates = document.querySelector(".calendar-dates");
+            const height = calendarDates.scrollHeight; // Get the height of the calendar
+            window.parent.postMessage({ calendarHeight: height + 62 }, "*"); // Send height to parent
+        };
+
         manipulate();
+        sendCalendarHeight();
 
         // Attach a click event listener to each icon
         prenexIcons.forEach(icon => {
@@ -322,6 +365,7 @@
                 // Call the manipulate function to
                 // update the calendar display
                 manipulate();
+                sendCalendarHeight();
             });
         });
     </script>
