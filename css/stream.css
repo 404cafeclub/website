@@ -1,0 +1,132 @@
+iframe {
+    border: none;
+}
+
+body, footer {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#video {
+    width: 100%;
+    height: 292px;
+}
+
+#chat{
+    width: 100%;
+    height: 550px;
+}
+
+.theater-mode .video-container {
+    flex: 3 1 31%;
+}
+
+.theater-mode #video {
+    height: 391px;
+}
+
+.theater-mode .nav {
+    display: none; /* Hide the navigation pane */
+}
+
+.theater-button {
+    background: linear-gradient(to right, var(--bg), var(--gradientBottom));
+    border: none;
+    border-radius: 5px;
+    color: var(--text);
+    font-family: "NintendoDS-BIOS";
+    font-size: 1.2rem;
+    letter-spacing: 0.025em;
+    opacity: 75%;
+    padding: 2px 7px;
+    position: absolute;
+    right: 6px;
+    top: 6px;
+}
+
+.theater-button:hover {
+    background: linear-gradient(to right, var(--bg), var(--gradientBottom), var(--gradientTop));
+}
+
+/** Begin Nintendo DS UI Button styles
+    from: ironminer888.neocities.org
+    source code: https://ironminer888.neocities.org/downloads/
+**/
+
+.gameRow * {
+    box-sizing: revert;
+}
+
+.gameRow {
+    padding: 0;
+    border: 1px solid white;
+    outline: 1px solid black;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    width: 198px; /*186*/
+    height: 55px; /*43*/
+    font-family: "NintendoDS-BIOS", monospace;
+    font-size: 16pt; /*12*/
+    line-height: 9pt;
+    margin: auto;
+}
+
+.accuratePadding div.imgContainer {
+    padding: 4px 6px 5px 5px;
+}
+
+.accuratePadding div.titleContainer {
+    height: 51px; /*39*/
+}
+
+.dsButton:hover {
+    outline: 1px solid #494949;
+    border: 1px solid #a2a2a2;
+    background-color: #525252;
+}
+
+.dsButton:active {
+    outline: 2px solid #494949;
+    border: 2px solid #a2a2a2;
+}
+
+.dsButton:active div.imgContainer {
+    background: linear-gradient(to bottom, #f3f3f3 #525252);
+}
+
+.imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px; /*32*/
+    height: 44px;
+    padding: 10px;
+    background: linear-gradient(to bottom, #f8f8f8, #c0c0c0);
+}
+
+.imgContainer img.dsicon {
+    max-width: 75%;
+    image-rendering: pixelated;
+}
+
+div.titleContainer {    
+    border-top: 1px solid #a2a2a2;
+    border-bottom: 1px solid #a2a2a2;
+    border-left: 1px solid #797979;
+    border-right: 1px solid #797979;
+    background-image: url("../images/ds/dsback.png");
+    background-repeat: repeat;
+    width: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #282828;
+}
+
+.dstitle {
+    line-height: 12pt;
+    margin: 16px 0
+}
+
+/** End Nintendo DS UI Button styles **/
