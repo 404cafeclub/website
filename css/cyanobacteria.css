@@ -469,7 +469,7 @@ dd::before {
 
 .calendar {
     width: 198px;
-	height: 239px; /* height may change depending on month/number of rows */
+	/*height: 239px;*/ /* height may change depending on month/number of rows */
 	margin-top: 7px;
 	border: 2px ridge var(--border);
 	border-radius: 5px;
