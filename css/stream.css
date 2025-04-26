@@ -1,0 +1,283 @@
+html {
+    height: 100%;
+}
+
+body,
+footer {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+iframe {
+    border: none;
+}
+
+.header-button {
+    background: linear-gradient(to right, var(--bg), var(--gradientBottom));
+    border-radius: 3px;
+    color: var(--text);
+    font-family: "NintendoDS-BIOS";
+    font-size: 1.2rem;
+    letter-spacing: 0.025em;
+    opacity: 70%;
+    /* padding: 2px 7px; */
+    /* border: none; */
+}
+
+.header-button:hover {
+    background: linear-gradient(to right, var(--bg), var(--gradientBottom), var(--gradientTop));
+}
+
+#big-theater-toggle,
+#chat-toggle,
+#nav-toggle {
+    display: flex;
+    padding: 6px 8px;
+    margin-top: -4px;
+    margin-bottom: 7px;
+    border: 2px solid var(--border);
+}
+
+#chat-compress {
+    margin-top: -2px;
+}
+
+#video {
+    display: block;
+    width: 100%;
+    height: auto;
+    /* margin-bottom: 10px; */
+}
+
+#chat {
+    width: 100%;
+    height: 550px;
+}
+
+.chat-container {
+    flex: 0 1 9%;
+}
+
+.header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between; /* Space items apart */
+    /* position: relative; */ /* Allow absolute positioning if needed */
+    /* margin-top: 6px; */
+}
+
+.header-left {
+    display: flex;
+    gap: 6px;
+}
+
+button:disabled,
+button:disabled:hover {
+    background: gray;
+    border-color: darkgray !important;
+}
+
+.header h1 {
+    transform: translateX(-18%);
+}
+
+.dsButton-Container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 1px;
+}
+
+.dsButton-Container a {
+    text-decoration: none;
+}
+
+.hide,
+.big-theater-mode .bottom,
+.big-theater-mode header,
+.big-theater-mode footer {
+    display: none !important;
+}
+
+/* .theater-mode .video-container {
+    flex: 3 1 31%;
+} */
+
+.big-theater-mode {
+    padding: 0px;
+    margin: 0px;
+    height: 100vh;
+}
+
+.big-theater-mode .container {
+    max-width: 100%;
+    margin: 0px 20px;
+    border: none;
+    outline: none;
+    position: relative;
+    top: 20px;
+}
+
+.big-theater-mode .header {
+    align-items: baseline;
+    margin-top: 3px;
+}
+
+.big-theater-mode .header h1 {
+    margin: 0;
+    /* height: 41px; */
+}
+
+.big-theater-mode h1 {
+    font-size: 2rem !important; /* Prevents Header text from shrinking under a certain breakpoint */
+}
+
+.big-theater-mode .video-container {
+    height: fit-content;
+}
+
+.big-theater-mode #chat {
+    height: 792px;
+    width: 340px;
+}
+
+.big-theater-mode .chat-container {
+    width: 100%;
+    min-width: fit-content;
+}
+
+
+/* Add responsiveness for mobile devices */
+@media only screen and (max-width: 784px) {
+    .big-theater-mode {
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        background: var(--bg);
+    }
+
+    .big-theater-mode .container {
+        flex-direction: column;
+        max-width: 100%;
+        margin: 0;
+        padding: 3px;
+        border: none;
+        outline: none;
+        position: relative;
+        top: 0px;
+    }
+
+    .big-theater-mode section {
+        padding: 3px;
+    }
+
+    .big-theater-mode .video-container {
+        flex: 2; /* Video takes 2/3 of the space */
+        width: 100%;
+        height: auto; /* Allow height to adjust */
+    }
+
+    .big-theater-mode .chat-container {
+        min-width: unset;
+        flex: 1; /* Chat takes up 1/3 of the space */
+    }
+
+    .big-theater-mode #chat {
+        width: 100%; /* Make chat take full width */
+    }
+
+    .chat-container {
+        width: 100%;
+        flex: 1 1 9%;
+    }
+
+}
+
+@media only screen and (784px <= width <=1278px) {
+    .big-theater-mode #chat {
+        width: 300px;
+    }
+
+}
+
+
+/** Begin Nintendo DS UI Button styles
+    from: ironminer888.neocities.org
+    source code: https://ironminer888.neocities.org/downloads/
+**/
+.gameRow * {
+    box-sizing: revert;
+}
+
+.gameRow {
+    padding: 0;
+    border: 1px solid white;
+    outline: 1px solid black;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    width: 194px; /*186*/
+    height: 51px; /*43*/
+    font-family: "NintendoDS-BIOS", monospace;
+    font-size: 16pt; /*12*/
+    line-height: 9pt;
+    /* margin: auto; */
+}
+
+.accuratePadding div.imgContainer {
+    padding: 4px 6px 5px 5px;
+}
+
+.accuratePadding div.titleContainer {
+    height: 47px; /*39*/
+}
+
+.dsButton:hover {
+    outline: 1px solid #494949;
+    border: 1px solid #a2a2a2;
+    background-color: #525252;
+}
+
+.dsButton:active {
+    outline: 2px solid #494949;
+    border: 2px solid #a2a2a2;
+}
+
+.dsButton:active div.imgContainer {
+    background: linear-gradient(to bottom, #f3f3f3 #525252);
+}
+
+.imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px; /*32*/
+    height: 44px;
+    padding: 10px;
+    background: linear-gradient(to bottom, #f8f8f8, #c0c0c0);
+}
+
+.imgContainer img.dsicon {
+    max-width: 75%;
+    image-rendering: pixelated;
+}
+
+div.titleContainer {
+    border-top: 1px solid #a2a2a2;
+    border-bottom: 1px solid #a2a2a2;
+    border-left: 1px solid #797979;
+    border-right: 1px solid #797979;
+    background-image: url("../images/ds/dsback.png");
+    background-repeat: repeat;
+    width: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #282828;
+}
+
+.dstitle {
+    line-height: 12pt;
+    margin: 16px 0
+}
+/** End Nintendo DS UI Button styles **/
