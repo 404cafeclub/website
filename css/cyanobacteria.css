@@ -89,7 +89,7 @@ header {
 }
 
 body {
-	padding: 10px;
+	/* padding: 10px; */ /* Moves all page content up just a bit */
 	font-family: "NintendoDS-BIOS";
 	font-size: 1.25rem;
 	letter-spacing: 0.025em;
