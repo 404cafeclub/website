@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function toggleNavVisible() {
         const navCompressSvg = document.querySelector("#nav-compress");
         const navExpandSvg = document.querySelector("#nav-expand");
-        const dsBtnContainer = document.querySelector(".dsButton-Container");
+        const dsBtnContainer = document.querySelector(".dsButton-ContainerOuter");
         const isNavHidden = navContainer.classList.contains("hide");
         const isBigTheater = mainContainer.classList.contains("big-theater-mode");
 
@@ -44,13 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
     function toggleBigTheaterMode() {
         const streamCompressSvg = document.querySelector("#stream-compress");
         const streamExpandSvg = document.querySelector("#stream-expand");
-
-        mainContainer.classList.toggle("big-theater-mode");        
-
-        // Toggle theater mode icons
+        mainContainer.classList.toggle("big-theater-mode");
         streamExpandSvg.classList.toggle("hide");
         streamCompressSvg.classList.toggle("hide");
-
         toggleNavVisible();
         toggleNavBtn.toggleAttribute("disabled");
     }
@@ -66,8 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
     //Toggles source for video iframe
     function toggleStreamSelect() {
         const streamContainer = document.querySelector(".stream-container");
-        const streamBtnText = document.querySelector(".dstitle");
-        const streamBtnImage = document.querySelector(".dsicon");
+        const streamBtnText = document.querySelector("#stream-toggle .dstitle");
+        const streamBtnImage = document.querySelector("#stream-toggle .dsicon");
         const isTwitch = streamContainer.classList.toggle("twitch");
         video.setAttribute(
             "src",
@@ -85,6 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 
+    //Unused, found out the CSS property aspect ratio exists
     function adjustVideoHeight() {
         var width = video.offsetWidth;
         if (width >= 1408) {
@@ -95,6 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
         video.style.height = `${height}px`;
     }
 
+    //Adjust chat height to fit inside the screen when in big theater mode and on smaller viewports
     function adjustChatHeight() {
         const theaterChat = document.querySelector('.big-theater-mode #chat');  
         const headerHeight = document.querySelector('.big-theater-mode .header')?.offsetHeight || 0;
@@ -110,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (viewportWidth <= 784) {
                 theaterChat.style.height = `${chatHeight}px`;
             } else if (viewportWidth > 784) {
-                theaterChat.style.height = "792px";
+                theaterChat.style.height = "827px";
             }
         } else {
             chat.style.height = "550px"
@@ -130,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Put both resize functions together to save a few lines of code
     function resizeChatAndVideo() {
         adjustChatHeight();
-        adjustVideoHeight();
+        //adjustVideoHeight();
     }
 
     // Adjust chat and video height on page load and window resize
